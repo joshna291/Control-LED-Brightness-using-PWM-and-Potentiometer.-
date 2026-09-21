@@ -18,9 +18,9 @@ To control the brightness of an LED using a Potentiometer and PWM (Pulse Width M
 
 # Circuit Diagram
 
----
-To upload
----
+
+<img width="767" height="511" alt="image" src="https://github.com/user-attachments/assets/f967fac9-4eee-42e4-8c71-0f8ea8bf3aea" />
+
 
 # Procedure
 
@@ -70,10 +70,35 @@ To upload
 # Program
 
 ---
-To upload
+int led = 9;      // PWM pin
+int pot = A0;
+int value;
+int brightness;
+
+void setup()
+{
+  pinMode(led, OUTPUT);
+}
+
+void loop()
+{
+  value = analogRead(pot);          // Read potentiometer (0-1023)
+  brightness = map(value, 0, 1023, 0, 255);
+
+  analogWrite(led, brightness);     // Change LED brightness
+
+  delay(10);
+}
 ---
 
 # Observation
+
+<img width="868" height="1156" alt="image" src="https://github.com/user-attachments/assets/6fddc8cd-cd65-4d79-9cc7-f6520febda6c" />
+
+<img width="868" height="1156" alt="image" src="https://github.com/user-attachments/assets/cee22250-c5b6-4da4-8fcd-d9d969089748" />
+
+<img width="868" height="1156" alt="image" src="https://github.com/user-attachments/assets/40c7138a-f99a-4d08-b3fd-53ad636d8b1c" />
+
 
 
 # Result
